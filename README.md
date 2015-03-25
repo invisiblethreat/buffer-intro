@@ -13,7 +13,8 @@
 
 
 ### Walkthrough
-1 Satisify your build dependencies. We're compiling to x86, so we need to have 32-bit libraries
-  1 Lots of people will be running x64, so you might need to hunt down packages that look like `lib32gcc1`
-1 Build your `overflow` by running `./build`
-1 Enter the debugger with `gdb -q overflow`
+
+1. Satisify your build dependencies. We're compiling to x86, so we need to have 32-bit libraries
+  1. Lots of people will be running x64, so you might need to hunt down packages that look like `lib32gcc1`
+1. Build your `overflow` by running `./build`
+1. Enter the debugger with `gdb -q overflow`
