@@ -14,7 +14,7 @@ void very_cold_code()
 void strcopy_is_the_devil(char *str)
 {
     char input[3];
-      strcpy(input, str);
+    strcpy(input, str);
 }
 
 void main(int argc, char *argv[])
