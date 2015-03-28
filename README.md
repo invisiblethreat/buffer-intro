@@ -1,5 +1,11 @@
 # A Stack Buffer Overflow
 
+### TODO
+- [x] Add builds for 64 bit binary
+- [x] Document the walkthrough for 32 bit
+- [ ] Document the walkthrough for 64 bit
+- [ ] Show the stack and memory layout
+
 ### Overview
 
 * This is a simple stack buffer overflow demonstration.
@@ -7,17 +13,19 @@
 * The majority of this work is a reimplementation of [https://vimeo.com/33106013](https://vimeo.com/33106013)
 
 ### Further Reading
-* [http://en.wikipedia.org/wiki/Data_Execution_Prevention](DEP)
-* [http://en.wikipedia.org/wiki/Address_space_layout_randomization](ASLR)
-* [http://en.wikipedia.org/wiki/Endianness](Endianness)
-* [http://en.wikipedia.org/wiki/Null-terminated_string](Null-terminated strings).
-* [http://www.dirac.org/linux/gdb/](The best intro to GDB)
+* [DEP](http://en.wikipedia.org/wiki/Data_Execution_Prevention)
+* [ASLR](http://en.wikipedia.org/wiki/Address_space_layout_randomization)
+* [Endianness](http://en.wikipedia.org/wiki/Endianness)
+* [Null-terminated strings](http://en.wikipedia.org/wiki/Null-terminated_string)
+* [The best intro to GDB](http://www.dirac.org/linux/gdb/)
 
 
 ### Walkthrough
 
 ### Goal
-To execute `cold_code()` and `very_cold_code()`.
+* To execute `cold_code()` and `very_cold_code()`.
+* Why? Well, `cold_code()` and `very_cold_code()` exist in the source file, but `main()` doesn't call them, making them
+inaccessable. To be able to control memory gives us the ability to randomly jump to these functions
 
 #### Setup
 1. Satisify your build dependencies. We're compiling to x86, so we need to have 32-bit libraries
@@ -220,4 +228,6 @@ After strcopy - 32 hex words starting at $esp
 0xffffda40:     0x0804820c      0xf7fc0000      0x00000000      0x00000000
 
 Address and contents of $ebp: 0xffffd9e8:       0x41414141 <- We are writing into $ebp
+
 ```
+
