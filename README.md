@@ -230,4 +230,4 @@ After strcopy - 32 hex words starting at $esp
 Address and contents of $ebp: 0xffffd9e8:       0x41414141 <- We are writing into $ebp
 
 ```
-
+* Now we will
